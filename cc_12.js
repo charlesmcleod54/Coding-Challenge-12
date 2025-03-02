@@ -17,3 +17,21 @@ document.addEventListener('DOMContentLoaded', function() {
     createRevenueCard();
 });
 
+// Task 2
+function updateMetricCards() {
+    const metricCards = document.querySelectorAll('.metric-card');
+
+    const metricCardsArray = Array.from(metricCards);
+
+    metricCardsArray.forEach(card => {
+        const title = card.querySelector('h3');
+        title.textContent = '${title.textContent} - Updated';
+
+        card.style.backgroundColor = 'lightgreen';
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    updateMetricCards();
+});
+
