@@ -61,3 +61,34 @@ document.querySelector('button[onclick="addInventoryItem(\'Smartphone\')"]');
     addSmartphoneButton.addEventListener('click', () => addInventoryItem('Smartphone'));
 });
 
+// Task 4
+function createCustomerCards() {
+    const customerSection = document.getElementById('customerSection');
+
+    const customers = [
+        { name: 'John', id: 1 },
+        { name: 'Josh', id: 2 },
+        { name: 'Jake', id: 3 },
+    ];
+
+    customers.forEach(customer => {
+        const customerCard = document.createElement('div');
+        customerCard.classList.add('customer-card');
+        customerCard.textContent = customer.name;
+
+        customerCard.addEventListener('click', function(event) {
+            console.log('Customer card clicked');
+            event.stopPropagation();
+        });
+
+        customerSection.appendChild(customerCard);
+    });
+
+    customerSection.addEventListener('click', function() {
+        console.log('Customer section clicked');
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    createCustomerCards();
+});
